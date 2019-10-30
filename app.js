@@ -38,13 +38,20 @@ app.get('/question/:id', (req, res) => {
     Question.findOne({
         where: {id : id}
     }).then(question => {
-        if(question != undefined){
-            res.render('question',{
-                question: question});
+        if(question !== undefined) {
+            Answer.findAll({
+                where: {questionId: question.id},
+                order: [['id', 'DESC']]
+            }).then(answers => {
+                res.render('question', {
+                    answers: answers,
+                    question: question
+                });
+            });
         } else {
-            res.redirect('/');
+            res.redirect('/')
         }
-    })
+    });
 });
 
 app.post('/send_ask', (req, res) => {

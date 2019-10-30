@@ -39,5 +39,18 @@
             </form>
         </div>
     </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <h3>Respostas</h3>
+            <% answers.forEach(answer =>{%>
+                <div class="card">
+                    <div class="card-body">
+                        <p><%= answer.content%></p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
 </div>
 <% include partials/footer.ejs%>
