@@ -63,6 +63,22 @@ app.post('/send_ask', (req, res) => {
     })
 });
 
+app.post('/send-answer', (req, res) => {
+    let content = req.body.content;
+    let questionId = req.body.questionId;
+    let date = new Date();
+    let dateBrasilia = new Date(date.valueOf() - date.getTimezoneOffset() * 60000);
+
+    Answer.create({
+        content: content,
+        questionId: questionId,
+        createdAt: dateBrasilia,
+        updatedAt: dateBrasilia
+    }).then(() => {
+        res.redirect('/question/' + questionId);
+    })
+})
+
 app.listen(8080, (err) => {
     if(err) return res.console.log('Server has problem.');
     console.log('Server is running...');
