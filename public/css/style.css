@@ -1,0 +1,39 @@
+body{
+    background-color: #eceff1;
+}
+
+.container-fluid{
+    padding-left: 8%;
+    padding-right: 8%;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.card{
+    margin-top: 5vh;
+}
+
+.question-title{
+    margin-top: 0.2%;
+    margin-bottom: 0.2%;
+}
+
+.question-description{
+    margin-top: 0.2%;
+    margin-bottom: 0.2%;
+}
+
+.label-question-title{
+    margin-bottom: 0.2%;
+}
+
+.label-question-description{
+    margin-top: 0.2%;
+}
+
+.ask-button {
+    margin-top: 0.5%;
+}
+
+.home-button {
+    margin-top: 0.5%;
+}

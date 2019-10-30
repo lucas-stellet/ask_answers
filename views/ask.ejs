@@ -1,0 +1,21 @@
+<% include partials/navbar.ejs %>
+<div class="container-fluid">
+    <div class="mt-4">
+        <h1>Faça uma pergunta</h1>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12" style="display: block">
+            <form action="/send_ask" method="POST">
+                <input type="text" name="title" placeholder="Descreva o título da pergunta"
+                       class="form-control question-title">
+                <textarea name="description" id="" cols="10" rows="8" class="form-control"
+                          placeholder="Descreva o conteúdo da pergunta"></textarea>
+                <div class="d-flex justify-content-end mt-2">
+                    <button class="btn btn-success ask-button">PERGUNTAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<% include partials/footer.ejs %>
